@@ -1,0 +1,36 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<table class="tx-hof-express-app" >
+	<tr>
+		<td>
+			<f:translate key="tx_hofexpressapp_domain_model_restaurant.name" />
+		</td>
+		<td>
+		{restaurant.name}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_hofexpressapp_domain_model_restaurant.description" />
+		</td>
+		<td>
+		{restaurant.description}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_hofexpressapp_domain_model_restaurant.image" />
+		</td>
+		<td>
+				<f:image src="{restaurant.image.originalResource.publicUrl}" width="200"/>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_hofexpressapp_domain_model_restaurant.cover_image" />
+		</td>
+		<td>
+				<f:image src="{restaurant.coverImage.originalResource.publicUrl}" width="200"/>
+		</td>
+	</tr>
+</table>
+</html>

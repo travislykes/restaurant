@@ -1,0 +1,15 @@
+
+plugin.tx_hofexpressapp_restaurant {
+    view {
+        # cat=plugin.tx_hofexpressapp_restaurant/file; type=string; label=Path to template root (FE)
+        templateRootPath = EXT:hof_express_app/Resources/Private/Templates/
+        # cat=plugin.tx_hofexpressapp_restaurant/file; type=string; label=Path to template partials (FE)
+        partialRootPath = EXT:hof_express_app/Resources/Private/Partials/
+        # cat=plugin.tx_hofexpressapp_restaurant/file; type=string; label=Path to template layouts (FE)
+        layoutRootPath = EXT:hof_express_app/Resources/Private/Layouts/
+    }
+    persistence {
+        # cat=plugin.tx_hofexpressapp_restaurant//a; type=string; label=Default storage PID
+        storagePid =
+    }
+}

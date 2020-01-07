@@ -1,0 +1,60 @@
+######################
+#### DEPENDENCIES ####
+######################
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap_package/Configuration/TypoScript/constants.typoscript">
+
+
+############
+### PAGE ###
+############
+page {
+    logo {
+        file = EXT:restaurant/Resources/Public/Images/logo.svg
+        fileInverted = EXT:restaurant/Resources/Public/Images/logo-inverted.svg
+        height = 52
+        width = 192
+        alt = Restaurant
+        linktitle = Restaurant
+    }
+    favicon {
+        file = EXT:restaurant/Resources/Public/Icons/favicon.ico
+    }
+    fluidtemplate {
+        layoutRootPath = EXT:restaurant/Resources/Private/Layouts/Page/
+        partialRootPath = EXT:restaurant/Resources/Private/Partials/Page/
+        templateRootPath = EXT:restaurant/Resources/Private/Templates/Page/
+    }
+}
+
+
+##################
+### EXTENSIONS ###
+##################
+plugin.bootstrap_package {
+    view {
+        layoutRootPath = EXT:restaurant/Resources/Private/Layouts/
+        partialRootPath = EXT:restaurant/Resources/Private/Partials/
+        templateRootPath = EXT:restaurant/Resources/Private/Templates/
+    }
+}
+
+
+########################
+### CONTENT ELEMENTS ###
+########################
+plugin.bootstrap_package_contentelements {
+    view {
+        layoutRootPath = EXT:restaurant/Resources/Private/Layouts/ContentElements/
+        partialRootPath = EXT:restaurant/Resources/Private/Partials/ContentElements/
+        templateRootPath = EXT:restaurant/Resources/Private/Templates/ContentElements/
+    }
+}
+
+
+################################
+### BOOTSTRAP SCSS CONSTANTS ###
+################################
+plugin.bootstrap_package.settings.scss {
+    primary = #eb3e4a
+    secondary = #013859
+}

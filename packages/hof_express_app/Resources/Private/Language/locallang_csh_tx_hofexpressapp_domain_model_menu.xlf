@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:hof_express_app/Resources/Private/Language/locallang_csh" date="2020-01-07T19:01:52Z" product-name="hof_express_app">
+		<header/>
+		<body>
+			<trans-unit id="name.description" resname="name.description">
+				<source>name</source>
+			</trans-unit>
+			<trans-unit id="description.description" resname="description.description">
+				<source>description</source>
+			</trans-unit>
+			<trans-unit id="foods.description" resname="foods.description">
+				<source>foods</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

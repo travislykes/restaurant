@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:hof_express_app/Resources/Private/Language/locallang_csh" date="2020-01-07T19:01:52Z" product-name="hof_express_app">
+		<header/>
+		<body>
+			<trans-unit id="total.description" resname="total.description">
+				<source>total</source>
+			</trans-unit>
+			<trans-unit id="order_items.description" resname="order_items.description">
+				<source>orderItems</source>
+			</trans-unit>
+			<trans-unit id="order_status.description" resname="order_status.description">
+				<source>orderStatus</source>
+			</trans-unit>
+			<trans-unit id="customer.description" resname="customer.description">
+				<source>customer</source>
+			</trans-unit>
+			<trans-unit id="delivery_type.description" resname="delivery_type.description">
+				<source>deliveryType</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
