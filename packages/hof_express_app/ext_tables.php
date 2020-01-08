@@ -11,6 +11,12 @@ call_user_func(
             'Restaurant'
         );
 
+        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+            'TravisLykes.HofExpressApp',
+            'Rpackage',
+            'Restaurant Content Ankasa'
+        );
+
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile('hof_express_app', 'Configuration/TypoScript', 'Hof Express App');
 
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_hofexpressapp_domain_model_food', 'EXT:hof_express_app/Resources/Private/Language/locallang_csh_tx_hofexpressapp_domain_model_food.xlf');

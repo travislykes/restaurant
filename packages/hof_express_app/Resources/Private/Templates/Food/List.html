@@ -13,32 +13,50 @@ in /Configuration/ExtensionBuilder/settings.yaml:
 Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
 <f:section name="content">
-    <h1>Listing for Food</h1>
+    <h3>Recent Food Listing</h3>
 
-    <f:flashMessages />
+<!--    <f:flashMessages />-->
+    <div class="row" style="margin-bottom: 10px;">
 
-    <table  class="tx_hofexpressapp" >
-        <tr>
-            <th><f:translate key="tx_hofexpressapp_domain_model_food.name" /></th>
-            <th><f:translate key="tx_hofexpressapp_domain_model_food.price" /></th>
-            <th><f:translate key="tx_hofexpressapp_domain_model_food.description" /></th>
-            <th><f:translate key="tx_hofexpressapp_domain_model_food.image" /></th>
-            <th> </th>
-            <th> </th>
-        </tr>
+        <div class="col-6">
+            <form>
+                <input type="text" class="form-control" placeholder="search">
+            </form>
+        </div>
+    </div>
+    <f:for each="{foods}" as="food">
+                <div class="row mt-1 mb-2">
 
-        <f:for each="{foods}" as="food">
-            <tr>
-                <td><f:link.action action="show" arguments="{food : food}">{food.name}</f:link.action></td>
-                <td><f:link.action action="show" arguments="{food : food}">{food.price}</f:link.action></td>
-                <td><f:link.action action="show" arguments="{food : food}">{food.description}</f:link.action></td>
-                <td><f:link.action action="show" arguments="{food : food}">{food.image.originalResource.name}</f:link.action></td>
-                <td><f:link.action action="edit" arguments="{food : food}">Edit</f:link.action></td>
-                <td><f:link.action action="delete" arguments="{food : food}">Delete</f:link.action></td>
-            </tr>
-        </f:for>
-    </table>
+                    <div class="col-3">
+                        <f:link.action action="show" arguments="{food : food}">
+                            <f:image src="{food.image.originalResource.publicUrl}" width="200" maxHeight="200"/>
+<!--                            <f:image src="{food.image.originalResource.publicUrl}" width="200"/>-->
+                        </f:link.action>
+                    </div>
 
-    <f:link.action action="new">New Food</f:link.action>
+                    <div class="col-6">
+                        <f:link.action action="show"  arguments="{food : food}">
+                            <h4 style="font-weight: 500; font-size: 14px;">{food.name}</h4>
+                        </f:link.action>
+
+
+                        <p>
+                            <f:format.nl2br>{food.description}</f:format.nl2br>
+                        </p>
+
+                    </div>
+                    <div class="col-3">
+                        <p>Price: <strong>{food.price->f:format.currency(thousandsSeparator: '.', currencySign: '$')}</strong></p>
+                        <div><input type="number" min="1" name="quantity" class="form-control-sm" value="1" required style="margin-bottom: 10px; width: 28%"></div>
+                        <div><a role="button" class="btn btn-outline-dark" style="margin-bottom: 10px; color: #000;">Add To Cart</a></div>
+                        <div><a role="button" class="btn btn-dark" style="margin-bottom: 10px; color: #fff;"> Buy Now</a></div>
+                    </div>
+                </div>
+                <hr>
+            </f:for>
+
+
+
+
 </f:section>
 </html>

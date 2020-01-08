@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="EXT:hof_express_app/Resources/Private/Language/locallang" date="2020-01-07T19:01:52Z" product-name="hof_express_app">
+	<file source-language="en" datatype="plaintext" original="EXT:hof_express_app/Resources/Private/Language/locallang" date="2020-01-07T20:02:33Z" product-name="hof_express_app">
 		<header/>
 		<body>
 			<trans-unit id="tx_hofexpressapp_domain_model_food" resname="tx_hofexpressapp_domain_model_food">
