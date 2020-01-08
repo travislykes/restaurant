@@ -35,7 +35,7 @@ call_user_func(
 
         \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
             'TravisLykes.HofExpressApp',
-            'AllRestaurants',
+            'Rpackage',
             [
 
                 'Restaurant' => 'list, show, new, create, edit, update, delete',
