@@ -13,11 +13,11 @@ in /Configuration/ExtensionBuilder/settings.yaml:
 Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
 <f:section name="content">
-    <section class="parallax-window" id="short" data-parallax="scroll" data-image-src="img/sub_header_short.jpg" data-natural-width="1400" data-natural-height="350">
+    <section class="parallax-window nn" id="short" data-parallax="scroll" data-image-src="img/sub_header_short.jpg" data-natural-width="1400" data-natural-height="350">
         <div id="subheader">
             <div id="sub_content">
-                <h1>24 results in your zone</h1>
-                <div><i class="icon_pin"></i> 135 Newtownards Road, Belfast, BT4 1AB</div>
+                <h1>All restaurants </h1>
+                <div><i class="icon_pin"></i> Browse over 30 restaurants in Hof, 95028</div>
             </div><!-- End sub_content -->
         </div><!-- End subheader -->
     </section><!-- End section -->
@@ -27,8 +27,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
         <div class="container">
             <ul>
                 <li><a href="#0">Home</a></li>
-                <li><a href="#0">Category</a></li>
-                <li>Page active</li>
+                <li>Restaurants</li>
             </ul>
             <a href="#0" class="search-overlay-menu-btn"><i class="icon-search-6"></i> Search</a>
         </div>
@@ -44,7 +43,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
 
             <div class="col-md-3">
                 <p>
-                    <a class="btn_map" data-toggle="collapse" href="#collapseMap" aria-expanded="false" aria-controls="collapseMap">View on map</a>
+                    <a class="btn_map" href="#">Contact Us</a>
                 </p>
                 <div id="filters_col">
                     <a data-toggle="collapse" href="#collapseFilters" aria-expanded="false" aria-controls="collapseFilters" id="filters_col_bt">Filters <i class="icon-plus-1 pull-right"></i></a>
@@ -56,22 +55,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
 
             <div class="col-md-9">
 
-                <div id="tools">
-                    <div class="row">
-                        <div class="col-md-3 col-sm-3 col-xs-6">
-                            <div class="styled-select">
-                                <select name="sort_rating" id="sort_rating">
-                                    <option value="" selected>Sort by ranking</option>
-                                    <option value="lower">Lowest ranking</option>
-                                    <option value="higher">Highest ranking</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-9 col-sm-9 hidden-xs">
-                            <a href="#" class="bt_filters"><i class="icon-th"></i></a>
-                        </div>
-                    </div>
-                </div><!--End tools -->
+
 
                 <f:for each="{restaurants}" as="restaurant">
                 <div class="strip_list wow fadeIn" data-wow-delay="0.1s">
