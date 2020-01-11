@@ -13,32 +13,136 @@ in /Configuration/ExtensionBuilder/settings.yaml:
 Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
 <f:section name="content">
-    <h1>Listing for Restaurant</h1>
+    <section class="parallax-window" id="short" data-parallax="scroll" data-image-src="img/sub_header_short.jpg" data-natural-width="1400" data-natural-height="350">
+        <div id="subheader">
+            <div id="sub_content">
+                <h1>24 results in your zone</h1>
+                <div><i class="icon_pin"></i> 135 Newtownards Road, Belfast, BT4 1AB</div>
+            </div><!-- End sub_content -->
+        </div><!-- End subheader -->
+    </section><!-- End section -->
+    <!-- End SubHeader ============================================ -->
 
-    <f:flashMessages />
+    <div id="position">
+        <div class="container">
+            <ul>
+                <li><a href="#0">Home</a></li>
+                <li><a href="#0">Category</a></li>
+                <li>Page active</li>
+            </ul>
+            <a href="#0" class="search-overlay-menu-btn"><i class="icon-search-6"></i> Search</a>
+        </div>
+    </div><!-- Position -->
 
-    <table  class="tx_hofexpressapp" >
-        <tr>
-            <th><f:translate key="tx_hofexpressapp_domain_model_restaurant.name" /></th>
-            <th><f:translate key="tx_hofexpressapp_domain_model_restaurant.description" /></th>
-            <th><f:translate key="tx_hofexpressapp_domain_model_restaurant.image" /></th>
-            <th><f:translate key="tx_hofexpressapp_domain_model_restaurant.cover_image" /></th>
-            <th> </th>
-            <th> </th>
-        </tr>
+    <div class="collapse" id="collapseMap">
+        <div id="map" class="map"></div>
+    </div><!-- End Map -->
 
-        <f:for each="{restaurants}" as="restaurant">
-            <tr>
-                <td><f:link.action action="show" arguments="{restaurant : restaurant}">{restaurant.name}</f:link.action></td>
-                <td><f:link.action action="show" arguments="{restaurant : restaurant}">{restaurant.description}</f:link.action></td>
-                <td><f:link.action action="show" arguments="{restaurant : restaurant}">{restaurant.image.originalResource.name}</f:link.action></td>
-                <td><f:link.action action="show" arguments="{restaurant : restaurant}">{restaurant.coverImage.originalResource.name}</f:link.action></td>
-                <td><f:link.action action="edit" arguments="{restaurant : restaurant}">Edit</f:link.action></td>
-                <td><f:link.action action="delete" arguments="{restaurant : restaurant}">Delete</f:link.action></td>
-            </tr>
-        </f:for>
-    </table>
+    <!-- Content ================================================== -->
+    <div class="container margin_60_35">
+        <div class="row">
 
-    <f:link.action action="new">New Restaurant</f:link.action>
+            <div class="col-md-3">
+                <p>
+                    <a class="btn_map" data-toggle="collapse" href="#collapseMap" aria-expanded="false" aria-controls="collapseMap">View on map</a>
+                </p>
+                <div id="filters_col">
+                    <a data-toggle="collapse" href="#collapseFilters" aria-expanded="false" aria-controls="collapseFilters" id="filters_col_bt">Filters <i class="icon-plus-1 pull-right"></i></a>
+                    <div class="collapse" id="collapseFilters">
+<!--                       -->
+                    </div><!--End collapse -->
+                </div><!--End filters col-->
+            </div><!--End col-md -->
+
+            <div class="col-md-9">
+
+                <div id="tools">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-3 col-xs-6">
+                            <div class="styled-select">
+                                <select name="sort_rating" id="sort_rating">
+                                    <option value="" selected>Sort by ranking</option>
+                                    <option value="lower">Lowest ranking</option>
+                                    <option value="higher">Highest ranking</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-9 col-sm-9 hidden-xs">
+                            <a href="#" class="bt_filters"><i class="icon-th"></i></a>
+                        </div>
+                    </div>
+                </div><!--End tools -->
+
+                <f:for each="{restaurants}" as="restaurant">
+                <div class="strip_list wow fadeIn" data-wow-delay="0.1s">
+                    <div class="ribbon_1">
+                        Popular
+                    </div>
+                    <div class="row">
+                        <div class="col-md-9 col-sm-9">
+                            <div class="desc">
+                                <div class="thumb_strip">
+                                    <f:link.action action="show" arguments="{restaurant : restaurant}">
+                                        <f:image src="{restaurant.image.originalResource.publicUrl}"/>
+                                    </f:link.action>
+                                </div>
+
+                                <h3>{restaurant.name}</h3>
+                                <div class="type">
+                                    Mexican / American
+                                </div>
+                                <div class="" style="color: #0f0f0f;">
+                                    {restaurant.description -> f:format.html()} <span class="opening">Opens at 08:00.</span>
+                                </div>
+                                <ul>
+                                    <li>Take away<i class="icon_check_alt2 ok"></i></li>
+                                    <li>Delivery<i class="icon_check_alt2 no"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3">
+                            <div class="go_to">
+                                <div>
+                                    <f:link.action action="show" arguments="{restaurant : restaurant}"  class="btn_1">
+                                        View Menu
+                                    </f:link.action>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- End row-->
+                </div><!-- End strip_list-->
+                </f:for>
+                <a href="#0" class="load_more_bt wow fadeIn" data-wow-delay="0.2s">Load more...</a>
+            </div><!-- End col-md-9-->
+
+        </div><!-- End row -->
+    </div><!-- End container -->
+<!--    <h1>Listing for Restaurant</h1>-->
+
+<!--    <f:flashMessages />-->
+
+<!--    <table  class="tx_hofexpressapp" >-->
+<!--        <tr>-->
+<!--            <th><f:translate key="tx_hofexpressapp_domain_model_restaurant.name" /></th>-->
+<!--            <th><f:translate key="tx_hofexpressapp_domain_model_restaurant.description" /></th>-->
+<!--            <th><f:translate key="tx_hofexpressapp_domain_model_restaurant.image" /></th>-->
+<!--            <th><f:translate key="tx_hofexpressapp_domain_model_restaurant.cover_image" /></th>-->
+<!--            <th> </th>-->
+<!--            <th> </th>-->
+<!--        </tr>-->
+
+<!--        <f:for each="{restaurants}" as="restaurant">-->
+<!--            <tr>-->
+<!--                <td><f:link.action action="show" arguments="{restaurant : restaurant}">{restaurant.name}</f:link.action></td>-->
+<!--                <td><f:link.action action="show" arguments="{restaurant : restaurant}">{restaurant.description}</f:link.action></td>-->
+<!--                <td><f:link.action action="show" arguments="{restaurant : restaurant}">{restaurant.image.originalResource.name}</f:link.action></td>-->
+<!--                <td><f:link.action action="show" arguments="{restaurant : restaurant}">{restaurant.coverImage.originalResource.name}</f:link.action></td>-->
+<!--                <td><f:link.action action="edit" arguments="{restaurant : restaurant}">Edit</f:link.action></td>-->
+<!--                <td><f:link.action action="delete" arguments="{restaurant : restaurant}">Delete</f:link.action></td>-->
+<!--            </tr>-->
+<!--        </f:for>-->
+<!--    </table>-->
+
+<!--    <f:link.action action="new">New Restaurant</f:link.action>-->
 </f:section>
 </html>

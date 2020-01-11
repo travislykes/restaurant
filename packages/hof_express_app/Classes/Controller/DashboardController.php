@@ -2,6 +2,7 @@
 namespace TravisLykes\HofExpressApp\Controller;
 
 
+use TravisLykes\HofExpressApp\Domain\Repository\RestaurantRepository;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 /***
@@ -19,8 +20,23 @@ use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
  */
 class DashboardController extends ActionController
 {
+    /**
+     * @var RestaurantRepository
+     */
+    protected $restaurantRepository;
+
+    /**
+     * @param RestaurantRepository $restaurantRepository
+     */
+
+    public function injectRestaurantRepository(RestaurantRepository $restaurantRepository)
+    {
+        $this->restaurantRepository = $restaurantRepository;
+    }
+
     public function overviewAction()
     {
-
+//        $restaurants = $this->restaurants->findRecent(3);
+//        $this->view->assign('restaurants', $restaurants);
     }
 }

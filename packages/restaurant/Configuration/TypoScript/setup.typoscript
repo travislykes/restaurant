@@ -10,6 +10,10 @@
 page {
     includeCSS {
         theme = EXT:restaurant/Resources/Public/Scss/Theme/theme.scss
+        custom = EXT:restaurant/Resources/Public/Css/style.css
+        responsive = EXT:restaurant/Resources/Public/Css/responsive.css
+        elegant = EXT:restaurant/Resources/Public/Css/elegant_font/elegant_font.min.css
+        fontello = EXT:restaurant/Resources/Public/Css/fontello/css/fontello.min.css
     }
 
     includeJSLibs {
