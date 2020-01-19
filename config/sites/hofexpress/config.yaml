@@ -1,0 +1,61 @@
+base: 'https://restaurant.ddev.site/'
+baseVariants:
+  -
+    base: 'https://restaurant.ddev.site/'
+    condition: 'getenv("DDEV_PROJECT") == "restaurant"'
+errorHandling: {  }
+languages:
+  -
+    title: English
+    enabled: true
+    languageId: '0'
+    base: /en/
+    typo3Language: default
+    locale: en_US.UTF-8
+    iso-639-1: en
+    navigationTitle: English
+    hreflang: en-us
+    direction: ltr
+    flag: us
+rootPageId: 1
+routes:
+  -
+    route: robots.txt
+    type: staticText
+    content: "User-agent: *\r\nDisallow: /typo3/\r\nDisallow: /typo3_src/\r\nAllow: /typo3/sysext/frontend/Resources/Public/*\r\n"
+
+routeEnhancers:
+  Restaurant:
+    type: Extbase
+    extension: HofExpressApp
+    plugin: Rpackage
+    defaultController: 'Restaurant::list'
+    routes:
+      - { _controller: 'Restaurant::list', routePath: '/' }
+      - { _controller: 'Restaurant::show', routePath: '/{restaurant}' }
+    aspects:
+      restaurant:
+        type: PersistedAliasMapper
+        tableName: 'tx_hofexpressapp_domain_model_restaurant'
+        routeFieldName: 'uid'
+      back:
+        type: StaticValueMapper
+        map:
+          o: 'overview'
+  Order:
+    type: Extbase
+    extension: HofExpressApp
+    plugin: Order
+    defaultController: 'Order::show'
+    routes:
+      - { _controller: 'Order::show', routePath: '/' }
+      - { _controller: 'Order::add', routePath: '/add/{food}' }
+      - { _controller: 'Order::remove', routePath: '/remove/{food}' }
+      - { _controller: 'Order::purge', routePath: '/purge' }
+    aspects:
+      food:
+        type: PersistedAliasMapper
+        tableName: 'tx_hofexpressapp_domain_model_food'
+        routeFieldName: 'uid'
+
+
