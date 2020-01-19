@@ -315,7 +315,9 @@ header.sticky{
 }
 #home #subheader{
     height:550px;
-    background:#fff url(../Images/img/bg.jpg) no-repeat center 0px;
+    /*width: 100%;*/
+    background:#fff url(../Images/img/r3.jpg) no-repeat center 0px;
+    /*object-fit: cover;*/
 }
 #short #subheader{
     height:350px;
