@@ -27,7 +27,8 @@
         "cweagans/composer-patches": "^1.6",
         "hof-express/restaurant": "^1.0",
         "travislykes/hof-express-app": "dev-master",
-        "typo3/cms-felogin": "^9.5"
+        "typo3/cms-felogin": "^9.5",
+        "oliver-hader/session-service": "^1.1"
     },
     "repositories": {
         "local": {
