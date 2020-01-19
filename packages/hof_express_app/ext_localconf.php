@@ -17,6 +17,18 @@ call_user_func(
 
         \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
             'TravisLykes.HofExpressApp',
+            'Cart',
+            [
+                'Cart' => 'show, add, remove, purge',
+            ],
+            // non-cacheable actions
+            [
+                'Cart' => 'show, add, remove, purge',
+            ]
+        );
+
+        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+            'TravisLykes.HofExpressApp',
             'Restaurant',
             [
                 'Food' => 'list, show, new, create, edit, update, delete',
@@ -74,6 +86,16 @@ call_user_func(
                             tt_content_defValues {
                                 CType = list
                                 list_type = hofexpressapp_overview
+                            }
+                        }
+
+                        cart {
+                            iconIdentifier = hof_express_app-plugin-cart
+                            title = user Order Customization
+                            description = Created Orders Page
+                            tt_content_defValues {
+                                CType = list
+                                list_type = hofexpressapp_cart
                             }
                         }
                         

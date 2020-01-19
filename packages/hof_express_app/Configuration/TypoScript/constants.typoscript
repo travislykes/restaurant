@@ -12,4 +12,12 @@ plugin.tx_hofexpressapp_restaurant {
         # cat=plugin.tx_hofexpressapp_restaurant//a; type=string; label=Default storage PID
         storagePid =
     }
+    settings{
+        pages{
+            # cat=plugin.tx_hofexpressapp_restaurant//a; type=string; label=Page ID for rendering orderItem
+            orderItem =
+
+
+        }
+    }
 }

@@ -22,6 +22,11 @@ plugin.tx_hofexpressapp_restaurant {
     mvc {
         #callDefaultActionIfActionCantBeResolved = 1
     }
+    settings{
+        pages{
+            orderItem = {$plugin.tx_hofexpressapp_restaurant.settings.pages.orderItem}
+        }
+    }
 }
 
 # these classes are only used in auto-generated templates
