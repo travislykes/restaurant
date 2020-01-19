@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="EXT:hof_express_app/Resources/Private/Language/locallang_db" date="2020-01-07T20:02:33Z" product-name="hof_express_app">
+	<file source-language="en" datatype="plaintext" original="EXT:hof_express_app/Resources/Private/Language/locallang_db" date="2020-01-19T10:49:02Z" product-name="hof_express_app">
 		<header/>
 		<body>
 			<trans-unit id="tx_hofexpressapp_domain_model_food" resname="tx_hofexpressapp_domain_model_food">
@@ -89,6 +89,9 @@
 			</trans-unit>
 			<trans-unit id="tx_hofexpressapp_domain_model_customer.address" resname="tx_hofexpressapp_domain_model_customer.address">
 				<source>Address</source>
+			</trans-unit>
+			<trans-unit id="tx_hofexpressapp_domain_model_customer.user" resname="tx_hofexpressapp_domain_model_customer.user">
+				<source>User</source>
 			</trans-unit>
 			<trans-unit id="tx_hofexpressapp_domain_model_menu" resname="tx_hofexpressapp_domain_model_menu">
 				<source>Menu</source>

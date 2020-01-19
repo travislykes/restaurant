@@ -41,6 +41,13 @@ class Customer extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $address = null;
 
     /**
+     * user
+     * 
+     * @var \TYPO3\CMS\Extbase\Domain\Model\FrontendUser
+     */
+    protected $user = null;
+
+    /**
      * Returns the userId
      * 
      * @return int $userId
@@ -101,5 +108,26 @@ class Customer extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setAddress(\TravisLykes\HofExpressApp\Domain\Model\Address $address)
     {
         $this->address = $address;
+    }
+
+    /**
+     * Returns the user
+     * 
+     * @return \TYPO3\CMS\Extbase\Domain\Model\FrontendUser $user
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * Sets the user
+     * 
+     * @param \TYPO3\CMS\Extbase\Domain\Model\FrontendUser $user
+     * @return void
+     */
+    public function setUser(\TYPO3\CMS\Extbase\Domain\Model\FrontendUser $user)
+    {
+        $this->user = $user;
     }
 }

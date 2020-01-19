@@ -427,8 +427,8 @@
         {
             "config": {
                 "position": [
-                    58,
-                    195
+                    56,
+                    66
                 ]
             },
             "name": "New Model Object",
@@ -493,6 +493,17 @@
                             "relationWire": "[wired]",
                             "renderType": "selectMultipleSideBySide",
                             "uid": "375281107500"
+                        },
+                        {
+                            "foreignRelationClass": "\\TYPO3\\CMS\\Extbase\\Domain\\Model\\FrontendUser",
+                            "lazyLoading": false,
+                            "propertyIsExcludeField": true,
+                            "relationDescription": "",
+                            "relationName": "user",
+                            "relationType": "zeroToOne",
+                            "relationWire": "[wired]",
+                            "renderType": "selectMultipleSideBySide",
+                            "uid": "1513715272003"
                         }
                     ]
                 }
@@ -501,8 +512,8 @@
         {
             "config": {
                 "position": [
-                    348,
-                    279
+                    325,
+                    356
                 ]
             },
             "name": "New Model Object",
@@ -890,7 +901,7 @@
     ],
     "storagePath": "\/var\/www\/html\/packages\/",
     "log": {
-        "last_modified": "2020-01-07 08:02",
+        "last_modified": "2020-01-19 10:49",
         "extension_builder_version": "9.10.2",
         "be_user": " (1)"
     }

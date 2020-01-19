@@ -67,7 +67,8 @@ CREATE TABLE tx_hofexpressapp_domain_model_customer (
 
 	user_id int(11) DEFAULT '0' NOT NULL,
 	phonenumber varchar(255) DEFAULT '' NOT NULL,
-	address int(11) unsigned DEFAULT '0'
+	address int(11) unsigned DEFAULT '0',
+	user int(11) unsigned DEFAULT '0'
 
 );
 

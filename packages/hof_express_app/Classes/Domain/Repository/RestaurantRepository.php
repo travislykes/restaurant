@@ -1,5 +1,6 @@
 <?php
 namespace TravisLykes\HofExpressApp\Domain\Repository;
+
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
 
@@ -24,12 +25,16 @@ class RestaurantRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
      */
     protected $defaultOrderings = ['sorting' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING];
 
-    public function findRecent(?int $limit = 6)
+    /**
+     * @param $limit
+     */
+    public function findRecent($limit = 6)
     {
         $query = $this->createQuery();
-//        $query->setOrderings([
-//            'publicationDate' => QueryInterface::ORDER_DESCENDING
-//        ]);
+
+        //        $query->setOrderings([
+        //            'publicationDate' => QueryInterface::ORDER_DESCENDING
+        //        ]);
         if ($limit !== null) {
             $query->setLimit($limit);
         }
