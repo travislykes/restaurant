@@ -17,6 +17,7 @@ CREATE TABLE tx_hofexpressapp_domain_model_food (
 CREATE TABLE tx_hofexpressapp_domain_model_restaurant (
 
 	name varchar(255) DEFAULT '' NOT NULL,
+	slug varchar(2048),
 	description text,
 	image int(11) unsigned NOT NULL default '0',
 	cover_image int(11) unsigned NOT NULL default '0',

@@ -24,7 +24,7 @@ return [
         'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, description, image, cover_image, menus',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, description, image, cover_image, menus, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, slug, description, image, cover_image, menus, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -124,6 +124,17 @@ return [
                 'type' => 'input',
                 'size' => 30,
                 'eval' => 'trim,required'
+            ],
+        ],
+        'slug' => [
+            'label' => 'URL segment',
+            'exclude' => true,
+            'config' => [
+                'type' => 'slug',
+                'generatorOptions' => [
+                    'fields' => ['name'],
+                ],
+                'eval' => 'uniqueInSite',
             ],
         ],
         'description' => [

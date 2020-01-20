@@ -37,11 +37,26 @@ routeEnhancers:
       restaurant:
         type: PersistedAliasMapper
         tableName: 'tx_hofexpressapp_domain_model_restaurant'
-        routeFieldName: 'uid'
+        routeFieldName: 'slug'
       back:
         type: StaticValueMapper
         map:
           o: 'overview'
+  Cart:
+    type: Extbase
+    extension: HofExpressApp
+    plugin: Cart
+    defaultController: 'Cart::show'
+    routes:
+      - { _controller: 'Cart::show', routePath: '/' }
+      - { _controller: 'Cart::add', routePath: '/add/{food}' }
+      - { _controller: 'Cart::remove', routePath: '/remove/{food}' }
+      - { _controller: 'Cart::purge', routePath: '/purge' }
+    aspects:
+      food:
+        type: PersistedAliasMapper
+        tableName: 'tx_hofexpressapp_domain_model_food'
+        routeFieldName: 'uid'
   Order:
     type: Extbase
     extension: HofExpressApp
