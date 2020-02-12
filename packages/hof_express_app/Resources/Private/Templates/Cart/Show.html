@@ -5,13 +5,20 @@
 <f:section name="content">
     <h1>My Orders
         <em style="font-size: 18px;">(
-             <f:if condition="{customer }">
+             <f:if condition="{customer}">
                  Complete Your Order {customer.user.Username}
              </f:if>
             )
+
+
         </em>
     </h1>
 
+    <f:if condition="{customer.address.street}">
+        <f:else>
+            <p style="color: darkred;">You have Not Created Your Address in Your Profile <br> Complete Your Profile to proceed.</p>
+        </f:else>
+    </f:if>
 
         <div class="box_style_2" id="main_menu">
                 <table class="table table-striped cart-list">
@@ -24,7 +31,7 @@
                             Price
                         </th>
                         <th>
-                            Order
+                           Actions
                         </th>
                     </tr>
                     </thead>
@@ -51,6 +58,12 @@
                     </tbody>
                 </table>
                 <hr>
+            <div>
+                <f:link.action style="margin-bottom: 10px;"
+                       class="btn btn-outline-dark {f:if(condition: customer.address.street,  else: 'disabled')}">
+                    Complete Order
+                </f:link.action>
+            </div>
 
 
         </div>
